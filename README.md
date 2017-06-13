@@ -1,10 +1,12 @@
 # WTF?
 
 Emery is a simple wrapper on top of requests, pyquery, beautifulsoup and tablib which simplifies basic web page scraping. Did you ever bumped into a webpage containing precious data you desperatly needed to get as CSV? Get all links? Yes, you can easily make this using libraries mentioned above or with Python's stdlib. But why bother?
+(moved to python 3)
 
 ## Installing
 
-    pip install git+git://github.com/starenka/emery.git
+    pip install git+git://github.com/hardkun/html5tidy.git
+    pip install git+git://github.com/hardkun/emery.git
 
 ## Usage
 
@@ -75,7 +77,12 @@ or JSON (or YAML, CSV, XLS)
     {"Date / Time": "6/30/12 23:00", "City": "Monroe", "State": "MI", "Shape": "Sphere", "Duration": "1-2 minutes", "Summary": "Orange ufo sighted in Monroe near I-75", "Posted": "7/4/12"},
     {"Date / Time": "6/30/12 23:00", "City": "Niles", "State": "OH", "Shape": "Changing", "Duration": "One minute", "Summary": "Square box in shape color red to orange, shape changed from square to circle color red to yellow.", "Posted": "7/4/12"}, ... [truncated]
 
+Also you can use pandas tables like this:
+    
+    p = Page(url='http://www.nuforc.org/webreports/ndxe201206.html', fix_html=True, use_pandas=True)
+
 Remember, you can use get_* methods to filter links, images or tables.
+    
 
 ## TODO
 - more features
